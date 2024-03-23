@@ -1,0 +1,300 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": "virtual_memory_dashboard",
+    "title": "Virtual Memory Dashboard",
+    "timezone": "browser",
+    "panels": [
+      {
+        "id": 1,
+        "type": "graph",
+        "title": "Total Memory Usage",
+        "targets": [
+          {
+            "expr": "node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes",
+            "legendFormat": "Memory Usage"
+          }
+        ],
+        "yaxes": [
+          {
+            "format": "bytes",
+            "label": "Memory Usage"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "type": "graph",
+        "title": "Swap Space Usage",
+        "targets": [
+          {
+            "expr": "node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes",
+            "legendFormat": "Swap Space Usage"
+          }
+        ],
+        "yaxes": [
+          {
+            "format": "bytes",
+            "label": "Swap Space Usage"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "type": "graph",
+        "title": "Page Faults",
+        "targets": [
+          {
+            "expr": "node_vmstat_pgfault",
+            "legendFormat": "Page Faults"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "type": "graph",
+        "title": "Page Ins",
+        "targets": [
+          {
+            "expr": "node_vmstat_pgpgin",
+            "legendFormat": "Page Ins"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "type": "graph",
+        "title": "Page Outs",
+        "targets": [
+          {
+            "expr": "node_vmstat_pgpgout",
+            "legendFormat": "Page Outs"
+          }
+        ]
+      }
+    ],
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "refresh": "5s"
+  },
+  "version": 1,
+  "links": [],
+  "time": {
+    "range": null,
+    "timeZone": "browser",
+    "sync": true,
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "custom": [
+      {
+        "text": "1h",
+        "value": "1h"
+      },
+      {
+        "text": "6h",
+        "value": "6h"
+      },
+      {
+        "text": "12h",
+        "value": "12h"
+      },
+      {
+        "text": "24h",
+        "value": "24h"
+      },
+      {
+        "text": "7d",
+        "value": "7d"
+      },
+      {
+        "text": "30d",
+        "value": "30d"
+      },
+      {
+        "text": "90d",
+        "value": "90d"
+      },
+      {
+        "text": "1y",
+        "value": "1y"
+      }
+    ]
+  },
+  "schemaVersion": 26,
+  "style": "dark",
+  "editable": true,
+  "gnetId": null,
+  "hideControls": false,
+  "sharedCrosshair": false,
+  "transparent": false,
+  "title": "Virtual Memory Dashboard",
+  "annotations": {
+    "list": []
+  },
+  "refresh": false
+}
+{
+  "dashboard": {
+    "id": null,
+    "uid": "system_metrics_dashboard",
+    "title": "System Metrics Dashboard",
+    "timezone": "browser",
+    "panels": [
+      {
+        "id": 1,
+        "type": "graph",
+        "title": "Swap Space Usage",
+        "targets": [
+          {
+            "expr": "node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes",
+            "legendFormat": "Swap Space Usage"
+          }
+        ],
+        "yaxes": [
+          {
+            "format": "bytes",
+            "label": "Swap Space Usage"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "type": "graph",
+        "title": "Page In",
+        "targets": [
+          {
+            "expr": "node_vmstat_pgpgin",
+            "legendFormat": "Page In"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "type": "graph",
+        "title": "Page Out",
+        "targets": [
+          {
+            "expr": "node_vmstat_pgpgout",
+            "legendFormat": "Page Out"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "type": "graph",
+        "title": "Active Memory",
+        "targets": [
+          {
+            "expr": "node_memory_Active_bytes",
+            "legendFormat": "Active Memory"
+          }
+        ],
+        "yaxes": [
+          {
+            "format": "bytes",
+            "label": "Active Memory"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "type": "graph",
+        "title": "CPU Utilization",
+        "targets": [
+          {
+            "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total{mode=\"idle\"}[5m])) * 100)",
+            "legendFormat": "CPU Utilization"
+          }
+        ],
+        "yaxes": [
+          {
+            "format": "percent",
+            "label": "CPU Utilization"
+          }
+        ]
+      }
+    ],
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "refresh": "5s"
+  },
+  "version": 1,
+  "links": [],
+  "time": {
+    "range": null,
+    "timeZone": "browser",
+    "sync": true,
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "custom": [
+      {
+        "text": "1h",
+        "value": "1h"
+      },
+      {
+        "text": "6h",
+        "value": "6h"
+      },
+      {
+        "text": "12h",
+        "value": "12h"
+      },
+      {
+        "text": "24h",
+        "value": "24h"
+      },
+      {
+        "text": "7d",
+        "value": "7d"
+      },
+      {
+        "text": "30d",
+        "value": "30d"
+      },
+      {
+        "text": "90d",
+        "value": "90d"
+      },
+      {
+        "text": "1y",
+        "value": "1y"
+      }
+    ]
+  },
+  "schemaVersion": 26,
+  "style": "dark",
+  "editable": true,
+  "gnetId": null,
+  "hideControls": false,
+  "sharedCrosshair": false,
+  "transparent": false,
+  "title": "System Metrics Dashboard",
+  "annotations": {
+    "list": []
+  },
+  "refresh": false
+}
